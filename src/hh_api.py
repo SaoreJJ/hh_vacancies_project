@@ -1,6 +1,9 @@
 import requests
 from typing import Dict, List, Any, Optional
-from config import HH_API_URL
+try:
+    from src.config import HH_API_URL
+except ImportError:
+    from config import HH_API_URL
 
 
 class HHAPI:

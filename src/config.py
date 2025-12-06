@@ -1,7 +1,15 @@
 import os
-from dotenv import load_dotenv
+import sys
+from pathlib import Path
 
-load_dotenv()
+# Добавляем родительскую директорию в sys.path для импортов
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    print("Warning: python-dotenv not installed")
 
 DB_NAME = os.getenv('DB_NAME', 'hh_vacancies')
 DB_USER = os.getenv('DB_USER', 'postgres')

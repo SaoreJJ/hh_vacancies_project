@@ -1,8 +1,15 @@
-from config import COMPANIES
-from hh_api import HHAPI
-from database import Database
-from db_manager import DBManager
-from utils import create_dotenv_file, display_results
+try:
+    from src.config import COMPANIES
+    from src.hh_api import HHAPI
+    from src.database import Database
+    from src.db_manager import DBManager
+    from src.utils import create_dotenv_file, display_results
+except ImportError:
+    from src.config import COMPANIES
+    from src.hh_api import HHAPI
+    from src.database import Database
+    from src.db_manager import DBManager
+    from utils import create_dotenv_file, display_results
 import time
 
 

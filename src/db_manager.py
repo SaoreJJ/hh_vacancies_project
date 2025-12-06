@@ -1,6 +1,9 @@
 import psycopg2
 from typing import List, Dict, Any, Optional
-from config import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT
+try:
+    from src.config import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT
+except ImportError:
+    from config import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT
 
 
 class DBManager:
